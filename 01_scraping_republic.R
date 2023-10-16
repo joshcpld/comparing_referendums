@@ -37,7 +37,6 @@ national_results <- as.tibble(do.call(cbind, national_results)) %>%
 
 
 
-
 #Web-scraping electorate results
 
 
@@ -57,8 +56,10 @@ electorate_results <- map(column_numbers, retrieve_electorate_referendum_data)
 
 electorate_results <- as.tibble(do.call(cbind, electorate_results)) %>% 
   set_names(column_names) %>% 
-  rename(electorate = state) %>% 
-  filter(!grepl("Total", electorate))
+  rename(electorate = state)
+
+
+
 
 
 
@@ -67,8 +68,6 @@ electorate_results <- as.tibble(do.call(cbind, electorate_results)) %>%
 electorate_name_table_numbers <-seq(6, 13, by = 1)
 
 state_names <- c("NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT")
-
-
 
 retrieve_electorate_states <- function(electorate_name_table_number){
   
@@ -80,8 +79,29 @@ retrieve_electorate_states <- function(electorate_name_table_number){
   
 }
 
+electorate_states <- map(electorate_name_table_numbers, retrieve_electorate_states) %>% 
+  set_names(state_names)
 
-NSW_names <- as_tibble(electorate_states[1]) %>% 
-  mutate(state = "NSW")
+electorate_state_pairs <- map2_dfr(electorate_states, state_names, ~ data.frame(state = .y, electorate = .x))
 
-#Create a function that iterates over each element in the list, feeding is state names to mutate
+
+#Pair electorate results with their state
+
+
+electorate_results <- electorate_results %>% 
+  inner_join(electorate_state_pairs, by = "electorate")
+
+
+
+
+#Data cleaning
+
+glimpse(national_results)
+
+national_results <- national_results
+
+enrolment <- national_results %>% 
+  pull(enrolment) %>%
+  str_replace_all("\\s|\\xc2\\xa0", "")
+ 
+#need to apply this solution to all relevant columns!
