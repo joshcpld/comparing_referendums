@@ -7,7 +7,9 @@ link <- "https://www.aec.gov.au/elections/referendums/1999_referendum_reports_st
 page <- read_html(link)
 
 
-#Web-scraping national data
+################################################################################
+############################ Web-scraping national data ########################
+################################################################################
 
 column_numbers <- seq(1,13, by = 1)
 
@@ -34,10 +36,9 @@ national_results <- as.tibble(do.call(cbind, national_results)) %>%
   slice(-n())
   
 
-
-
-
-#Web-scraping electorate results
+################################################################################
+########################## Web-scraping electorate data ########################
+################################################################################
 
 
 retrieve_electorate_referendum_data <- function(column_number){
@@ -60,10 +61,10 @@ electorate_results <- as.tibble(do.call(cbind, electorate_results)) %>%
 
 
 
+############################Assigning states to electorates#####################
 
 
-
-#Retrieve state assignments for each electorate
+###   Retrieve state assignments for each electorate
 
 electorate_name_table_numbers <-seq(6, 13, by = 1)
 
@@ -85,7 +86,7 @@ electorate_states <- map(electorate_name_table_numbers, retrieve_electorate_stat
 electorate_state_pairs <- map2_dfr(electorate_states, state_names, ~ data.frame(state = .y, electorate = .x))
 
 
-#Pair electorate results with their state
+####   Pair electorate results with their state
 
 
 electorate_results <- electorate_results %>% 
@@ -94,14 +95,50 @@ electorate_results <- electorate_results %>%
 
 
 
-#Data cleaning
+
+
+################################################################################
+############################### Data cleaning ##################################
+################################################################################
+
+
+
+########################### Cleaning national results ##########################
+
+# Remove whitespace and turn relevant columns to doubles
 
 glimpse(national_results)
 
-national_results <- national_results
+cols_to_exclude <- c("state","result")
 
-enrolment <- national_results %>% 
-  pull(enrolment) %>%
-  str_replace_all("\\s|\\xc2\\xa0", "")
- 
-#need to apply this solution to all relevant columns!
+national_results <- national_results %>% 
+  mutate_at(vars(-one_of(cols_to_exclude)), ~str_replace_all(.,"\\s|\\xc2\\xa0", "")) %>% 
+  mutate_at(vars(-one_of(cols_to_exclude)), as.numeric)
+  
+
+########################### Cleaning national results ##########################
+
+glimpse(electorate_results)
+
+cols_to_exclude <- c("state","result", "electorate")
+
+electorate_results <- electorate_results %>% 
+  relocate(state, .before = result) %>% 
+  mutate_at(vars(-one_of(cols_to_exclude)), ~str_replace_all(.,"\\s|\\xc2\\xa0", "")) %>% 
+  mutate_at(vars(-one_of(cols_to_exclude)), as.numeric)
+  
+
+
+
+################################################################################
+############################### Saving off data frames##########################
+################################################################################
+
+write_csv(national_results, "data/republic_referendum_national_results.csv")
+
+write_csv(electorate_results, "data/republic_referendum_electorate_results.csv")
+
+
+
+
+
