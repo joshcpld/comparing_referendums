@@ -116,7 +116,7 @@ national_results <- national_results %>%
   mutate_at(vars(-one_of(cols_to_exclude)), as.numeric)
   
 
-########################### Cleaning national results ##########################
+########################### Cleaning electorate results ########################
 
 glimpse(electorate_results)
 
