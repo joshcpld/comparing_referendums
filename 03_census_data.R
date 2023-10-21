@@ -36,9 +36,9 @@ income <- read_csv("data/census_data/2021Census_G02_AUST_CED.csv") %>%
 
 indigenous <- read_csv("data/census_data/2021Census_G07_AUST_CED.csv") %>% 
   select(CED_CODE_2021, Tot_Indigenous_P,Tot_Tot_P) %>% 
-  mutate(indigenous_share = (Tot_Indigenous_P / Tot_Tot_P) * 100) %>% 
-  mutate(indigenous_share = round(indigenous_share,2)) %>% 
-  select(CED_CODE_2021, indigenous_share)
+  mutate(share_indigenous = (Tot_Indigenous_P / Tot_Tot_P) * 100) %>% 
+  mutate(share_indigenous = round(share_indigenous,2)) %>% 
+  select(CED_CODE_2021, share_indigenous)
   
 
 
@@ -87,3 +87,9 @@ census_data <- census_data %>%
   inner_join(electorate_name_code_pairs, by = "CED_CODE_2021") %>% 
   relocate(electorate, .before = median_age)
   
+
+################################################################################
+########################## Saving off dataframes ###############################
+################################################################################
+
+write_csv(census_data, "data/census_data.csv")
