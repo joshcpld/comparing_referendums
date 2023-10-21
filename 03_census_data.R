@@ -30,6 +30,23 @@ income <- read_csv("data/census_data/2021Census_G02_AUST_CED.csv") %>%
   select(CED_CODE_2021, median_family_income = Median_tot_fam_inc_weekly)
 
 
+# Turning income series into a series which identifies each electorate as: low, middle
+# or high income.
+
+income_group <- income %>% 
+  mutate(percentile = rank(median_family_income, na.last = "keep") / max(rank(median_family_income, na.last = "keep")) * 100) %>% 
+  mutate(percentile = round(percentile, 1)) %>% 
+  mutate(income_group = case_when(
+    
+    percentile <= 33.3 ~ "Low income",
+    percentile > 33.3 & percentile <= 66.6 ~ "Middle income",
+    percentile > 66.6 ~ "High Income"
+    
+  )) %>% 
+  group_by(income_group) %>% 
+  select(CED_CODE_2021, income_group)
+
+
 
 ################################## Indigenous ##################################
 
@@ -73,7 +90,8 @@ census_data <- age %>%
   inner_join(education, by = "CED_CODE_2021") %>% 
   inner_join(ethnicity, by = "CED_CODE_2021") %>% 
   inner_join(indigenous, by = "CED_CODE_2021") %>% 
-  inner_join(income, by = "CED_CODE_2021") 
+  inner_join(income, by = "CED_CODE_2021") %>% 
+  inner_join(income_group, by = "CED_CODE_2021")
 
 ####################### Assigning codes to electorate names ####################
 

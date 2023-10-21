@@ -76,12 +76,12 @@ ggplot(referendum_results, aes(x = yes, y = log(share_indigenous), colour = stat
 ################################# Modelling  ###################################
 ################################################################################
 
-yes_vote_model <- lm(yes ~ median_age + median_family_income + share_indigenous + share_Australia + share_post_grad,
+yes_vote_model <- lm(yes ~ median_family_income + share_indigenous + share_Australia + share_post_grad,
                      data = referendum_results)
 
 summary(yes_vote_model)
 
-yes_vote_model_2 <- lm(yes ~ share_Australia + log(share_post_grad),
+yes_vote_model_2 <- lm(yes ~ share_Australia + log(share_post_grad) + median_family_income,
                        data = referendum_results)
 
 summary(yes_vote_model_2)
