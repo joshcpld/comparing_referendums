@@ -11,7 +11,7 @@ library(glue)
 
 electorate_names <- read_csv("data/voice_referendum_electorate_results.csv") %>% 
   select(electorate, state)
-
+ 
 
 ####### Figuring out which electorates correspond with which link numbers ######
 
