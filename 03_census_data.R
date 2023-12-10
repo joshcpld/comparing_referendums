@@ -75,10 +75,12 @@ ethnicity <- read_csv("data/census_data/2021Census_G09F_AUST_CED.csv") %>%
 
 
 education <- read_csv("data/census_data/2021Census_G49B_AUST_CED.csv") %>% 
-  select(CED_CODE_2021, P_PGrad_Deg_Total, P_Tot_Total) %>% 
+  select(CED_CODE_2021, P_PGrad_Deg_Total, P_BachDeg_Total, P_Tot_Total) %>% 
   mutate(share_post_grad = (P_PGrad_Deg_Total / P_Tot_Total) * 100) %>% 
-  mutate(share_post_grad = round(share_post_grad, 2)) %>% 
-  select(CED_CODE_2021, share_post_grad)
+  mutate(share_post_grad = round(share_post_grad, 2)) %>%
+  mutate(share_under_grad = (P_BachDeg_Total / P_Tot_Total) * 100) %>%
+  mutate(share_under_grad = round(share_under_grad, 2)) %>%
+  select(CED_CODE_2021, share_post_grad, share_under_grad)
 
 
   
