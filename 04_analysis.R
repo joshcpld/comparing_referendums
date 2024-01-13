@@ -18,6 +18,8 @@ election_data <- read_csv("data/electorate_election_data.csv") %>%
 
 # Electorate SEIFA data ########################################################
 
+# Note these data represent electorate percentiles
+
 seifa_data <- read_csv("data/electorate_seifas.csv")
 
 # Geography data ###############################################################
