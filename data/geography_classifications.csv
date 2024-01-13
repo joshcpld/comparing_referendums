@@ -1,152 +1,152 @@
-Electoral division,Demographic classification,State or territory
-Adelaide,Inner Metropolitan,South Australia
-Aston,Outer Metropolitan,Victoria
-Ballarat,Provincial,Victoria
-Banks,Inner Metropolitan,New South Wales
-Barker,Rural,South Australia
-Barton,Inner Metropolitan,New South Wales
-Bass,Provincial,Tasmania
-Bean,Inner Metropolitan,ACT
-Bendigo,Provincial,Victoria
-Bennelong,Inner Metropolitan,New South Wales
-Berowra,Outer Metropolitan,New South Wales
-Blair,Provincial,Queensland
-Blaxland,Inner Metropolitan,New South Wales
-Bonner,Outer Metropolitan,Queensland
-Boothby,Outer Metropolitan,South Australia
-Bowman,Outer Metropolitan,Queensland
-Braddon,Rural,Tasmania
-Bradfield,Inner Metropolitan,New South Wales
-Brand,Outer Metropolitan,Western Australia
-Brisbane,Inner Metropolitan,Queensland
-Bruce,Outer Metropolitan,Victoria
-Burt,Outer Metropolitan,Western Australia
-Calare,Rural,New South Wales
-Calwell,Outer Metropolitan,Victoria
-Canberra,Inner Metropolitan,ACT
-Canning,Outer Metropolitan,Western Australia
-Capricornia,Provincial,Queensland
-Casey,Rural,Victoria
-Chifley,Outer Metropolitan,New South Wales
-Chisholm,Inner Metropolitan,Victoria
-Clark,Inner Metropolitan,Tasmania
-Cook,Inner Metropolitan,New South Wales
-Cooper,Inner Metropolitan,Victoria
-Corangamite,Provincial,Victoria
-Corio,Provincial,Victoria
-Cowan,Inner Metropolitan,Western Australia
-Cowper,Provincial,New South Wales
-Cunningham,Provincial,New South Wales
-Curtin,Inner Metropolitan,Western Australia
-Dawson,Rural,Queensland
-Deakin,Outer Metropolitan,Victoria
-Dickson,Outer Metropolitan,Queensland
-Dobell,Provincial,New South Wales
-Dunkley,Outer Metropolitan,Victoria
-Durack,Rural,Western Australia
-Eden-Monaro,Rural,New South Wales
-Fadden,Outer Metropolitan,Queensland
-Fairfax,Rural,Queensland
-Farrer,Rural,New South Wales
-Fenner,Inner Metropolitan,ACT
-Fisher,Rural,Queensland
-Flinders,Rural,Victoria
-Flynn,Rural,Queensland
-Forde,Outer Metropolitan,Queensland
-Forrest,Rural,Western Australia
-Fowler,Outer Metropolitan,New South Wales
-Franklin,Outer Metropolitan,Tasmania
-Fraser,Inner Metropolitan,Victoria
-Fremantle,Inner Metropolitan,Western Australia
-Gellibrand,Inner Metropolitan,Victoria
-Gilmore,Rural,New South Wales
-Gippsland,Rural,Victoria
-Goldstein,Inner Metropolitan,Victoria
-Gorton,Outer Metropolitan,Victoria
-Grayndler,Inner Metropolitan,New South Wales
-Greenway,Outer Metropolitan,New South Wales
-Grey,Rural,South Australia
-Griffith,Inner Metropolitan,Queensland
-Groom,Provincial,Queensland
-Hasluck,Outer Metropolitan,Western Australia
-Hawke,Provincial,Victoria
-Herbert,Provincial,Queensland
-Higgins,Inner Metropolitan,Victoria
-Hindmarsh,Inner Metropolitan,South Australia
-Hinkler,Provincial,Queensland
-Holt,Outer Metropolitan,Victoria
-Hotham,Inner Metropolitan,Victoria
-Hughes,Outer Metropolitan,New South Wales
-Hume,Provincial,New South Wales
-Hunter,Rural,New South Wales
-Indi,Rural,Victoria
-Isaacs,Outer Metropolitan,Victoria
-Jagajaga,Outer Metropolitan,Victoria
-Kennedy,Rural,Queensland
-Kingsford Smith,Inner Metropolitan,New South Wales
-Kingston,Outer Metropolitan,South Australia
-Kooyong,Inner Metropolitan,Victoria
-La Trobe,Provincial,Victoria
-Lalor,Outer Metropolitan,Victoria
-Leichhardt,Rural,Queensland
-Lilley,Inner Metropolitan,Queensland
-Lindsay,Outer Metropolitan,New South Wales
-Lingiari,Rural,NT
-Longman,Provincial,Queensland
-Lyne,Rural,New South Wales
-Lyons,Rural,Tasmania
-Macarthur,Outer Metropolitan,New South Wales
-Mackellar,Outer Metropolitan,New South Wales
-Macnamara,Inner Metropolitan,Victoria
-Macquarie,Provincial,New South Wales
-Makin,Outer Metropolitan,South Australia
-Mallee,Rural,Victoria
-Maranoa,Rural,Queensland
-Maribyrnong,Inner Metropolitan,Victoria
-Mayo,Rural,South Australia
-McEwen,Rural,Victoria
-McMahon,Outer Metropolitan,New South Wales
-McPherson,Provincial,Queensland
-Melbourne,Inner Metropolitan,Victoria
-Menzies,Outer Metropolitan,Victoria
-Mitchell,Outer Metropolitan,New South Wales
-Monash,Rural,Victoria
-Moncrieff,Provincial,Queensland
-Moore,Outer Metropolitan,Western Australia
-Moreton,Inner Metropolitan,Queensland
-New England,Rural,New South Wales
-Newcastle,Provincial,New South Wales
-Nicholls,Rural,Victoria
-North Sydney,Inner Metropolitan,New South Wales
-O'Connor,Rural,Western Australia
-Oxley,Outer Metropolitan,Queensland
-Page,Rural,New South Wales
-Parkes,Rural,New South Wales
-Parramatta,Inner Metropolitan,New South Wales
-Paterson,Provincial,New South Wales
-Pearce,Outer Metropolitan,Western Australia
-Perth,Inner Metropolitan,Western Australia
-Petrie,Outer Metropolitan,Queensland
-Rankin,Outer Metropolitan,Queensland
-Reid,Inner Metropolitan,New South Wales
-Richmond,Rural,New South Wales
-Riverina,Rural,New South Wales
-Robertson,Provincial,New South Wales
-Ryan,Outer Metropolitan,Queensland
-Scullin,Outer Metropolitan,Victoria
-Shortland,Provincial,New South Wales
-Solomon,Inner Metropolitan,NT
-Spence,Outer Metropolitan,South Australia
-Sturt,Inner Metropolitan,South Australia
-Swan,Inner Metropolitan,Western Australia
-Sydney,Inner Metropolitan,New South Wales
-Tangney,Inner Metropolitan,Western Australia
-Wannon,Rural,Victoria
-Warringah,Inner Metropolitan,New South Wales
-Watson,Inner Metropolitan,New South Wales
-Wentworth,Inner Metropolitan,New South Wales
-Werriwa,Outer Metropolitan,New South Wales
-Whitlam,Provincial,New South Wales
-Wide Bay,Rural,Queensland
-Wills,Inner Metropolitan,Victoria
-Wright,Rural,Queensland
+electorate,inner_metro,outer_metro,provincial,rural
+Adelaide,1,0,0,0
+Aston,0,1,0,0
+Ballarat,0,0,1,0
+Banks,1,0,0,0
+Barker,0,0,0,1
+Barton,1,0,0,0
+Bass,0,0,1,0
+Bean,1,0,0,0
+Bendigo,0,0,1,0
+Bennelong,1,0,0,0
+Berowra,0,1,0,0
+Blair,0,0,1,0
+Blaxland,1,0,0,0
+Bonner,0,1,0,0
+Boothby,0,1,0,0
+Bowman,0,1,0,0
+Braddon,0,0,0,1
+Bradfield,1,0,0,0
+Brand,0,1,0,0
+Brisbane,1,0,0,0
+Bruce,0,1,0,0
+Burt,0,1,0,0
+Calare,0,0,0,1
+Calwell,0,1,0,0
+Canberra,1,0,0,0
+Canning,0,1,0,0
+Capricornia,0,0,1,0
+Casey,0,0,0,1
+Chifley,0,1,0,0
+Chisholm,1,0,0,0
+Clark,1,0,0,0
+Cook,1,0,0,0
+Cooper,1,0,0,0
+Corangamite,0,0,1,0
+Corio,0,0,1,0
+Cowan,1,0,0,0
+Cowper,0,0,1,0
+Cunningham,0,0,1,0
+Curtin,1,0,0,0
+Dawson,0,0,0,1
+Deakin,0,1,0,0
+Dickson,0,1,0,0
+Dobell,0,0,1,0
+Dunkley,0,1,0,0
+Durack,0,0,0,1
+Eden-Monaro,0,0,0,1
+Fadden,0,1,0,0
+Fairfax,0,0,0,1
+Farrer,0,0,0,1
+Fenner,1,0,0,0
+Fisher,0,0,0,1
+Flinders,0,0,0,1
+Flynn,0,0,0,1
+Forde,0,1,0,0
+Forrest,0,0,0,1
+Fowler,0,1,0,0
+Franklin,0,1,0,0
+Fraser,1,0,0,0
+Fremantle,1,0,0,0
+Gellibrand,1,0,0,0
+Gilmore,0,0,0,1
+Gippsland,0,0,0,1
+Goldstein,1,0,0,0
+Gorton,0,1,0,0
+Grayndler,1,0,0,0
+Greenway,0,1,0,0
+Grey,0,0,0,1
+Griffith,1,0,0,0
+Groom,0,0,1,0
+Hasluck,0,1,0,0
+Hawke,0,0,1,0
+Herbert,0,0,1,0
+Higgins,1,0,0,0
+Hindmarsh,1,0,0,0
+Hinkler,0,0,1,0
+Holt,0,1,0,0
+Hotham,1,0,0,0
+Hughes,0,1,0,0
+Hume,0,0,1,0
+Hunter,0,0,0,1
+Indi,0,0,0,1
+Isaacs,0,1,0,0
+Jagajaga,0,1,0,0
+Kennedy,0,0,0,1
+Kingsford Smith,1,0,0,0
+Kingston,0,1,0,0
+Kooyong,1,0,0,0
+La Trobe,0,0,1,0
+Lalor,0,1,0,0
+Leichhardt,0,0,0,1
+Lilley,1,0,0,0
+Lindsay,0,1,0,0
+Lingiari,0,0,0,1
+Longman,0,0,1,0
+Lyne,0,0,0,1
+Lyons,0,0,0,1
+Macarthur,0,1,0,0
+Mackellar,0,1,0,0
+Macnamara,1,0,0,0
+Macquarie,0,0,1,0
+Makin,0,1,0,0
+Mallee,0,0,0,1
+Maranoa,0,0,0,1
+Maribyrnong,1,0,0,0
+Mayo,0,0,0,1
+McEwen,0,0,0,1
+McMahon,0,1,0,0
+McPherson,0,0,1,0
+Melbourne,1,0,0,0
+Menzies,0,1,0,0
+Mitchell,0,1,0,0
+Monash,0,0,0,1
+Moncrieff,0,0,1,0
+Moore,0,1,0,0
+Moreton,1,0,0,0
+New England,0,0,0,1
+Newcastle,0,0,1,0
+Nicholls,0,0,0,1
+North Sydney,1,0,0,0
+O'Connor,0,0,0,1
+Oxley,0,1,0,0
+Page,0,0,0,1
+Parkes,0,0,0,1
+Parramatta,1,0,0,0
+Paterson,0,0,1,0
+Pearce,0,1,0,0
+Perth,1,0,0,0
+Petrie,0,1,0,0
+Rankin,0,1,0,0
+Reid,1,0,0,0
+Richmond,0,0,0,1
+Riverina,0,0,0,1
+Robertson,0,0,1,0
+Ryan,0,1,0,0
+Scullin,0,1,0,0
+Shortland,0,0,1,0
+Solomon,1,0,0,0
+Spence,0,1,0,0
+Sturt,1,0,0,0
+Swan,1,0,0,0
+Sydney,1,0,0,0
+Tangney,1,0,0,0
+Wannon,0,0,0,1
+Warringah,1,0,0,0
+Watson,1,0,0,0
+Wentworth,1,0,0,0
+Werriwa,0,1,0,0
+Whitlam,0,0,1,0
+Wide Bay,0,0,0,1
+Wills,1,0,0,0
+Wright,0,0,0,1
