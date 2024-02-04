@@ -21,10 +21,11 @@ seifas <- read_csv("data/inputs/seifa/CEDs_merged_output.csv") %>%
 
 electorate_seifas <- seifas %>% 
   group_by(electorate) %>% 
-  summarise(electorate_irsad_seifa = median(IRSAD_AUS_PERCENTILE),
-            electorate_irsd_seifa = median(IRSD_AUS_PERCENTILE),
-            electorate_ieo_seifa = median(IEO_AUS_PERCENTILE),
-            electorate_ieo_seifa = median(IER_AUS_PERCENTILE)) 
+  summarise(electorate_irsad_seifa = mean(IRSAD_AUS_PERCENTILE),
+            electorate_irsd_seifa = mean(IRSD_AUS_PERCENTILE),
+            electorate_ieo_seifa = mean(IEO_AUS_PERCENTILE))
+
+ggplot(electorate_seifas, aes(electorate_ieo_seifa)) + geom_histogram()
 
 write_csv(electorate_seifas, "data/electorate_seifas.csv")
 
@@ -41,6 +42,8 @@ geography_classifications <- read_excel("data/inputs/AEC_geography_classificatio
   mutate(outer_metro = case_when(geographic_classification == "Outer Metropolitan" ~ 1, TRUE ~ 0))%>% 
   mutate(provincial = case_when(geographic_classification == "Provincial" ~ 1, TRUE ~ 0))%>% 
   mutate(rural = case_when(geographic_classification == "Rural" ~ 1, TRUE ~ 0)) %>% 
+  mutate(metro = case_when(geographic_classification == "Inner Metropolitan" | geographic_classification == "Outer Metropolitan" ~ 1, TRUE ~ 0)) %>% 
+  mutate(non_metro = case_when(geographic_classification == "Provincial" | geographic_classification == "Rural" ~ 1, TRUE ~ 0)) %>% 
   select(-geographic_classification)
 
 write_csv(geography_classifications, "data/geography_classifications.csv")
