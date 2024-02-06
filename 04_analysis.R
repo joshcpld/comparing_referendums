@@ -166,7 +166,7 @@ political_chart <- ggsave(filename = "charts/political_chart.png",
                           + labs(x = "Yes voting rate (%)", y = "2022 election first pref. voting rate (%)")
                           + ggtitle("Chart 1: Relationship between election and referendum voting") 
                           + scale_x_continuous(limits = c(1, 100))
-                          + theme(plot.title = element_text(size = 10))) 
+                          + theme(plot.title = element_text(size = 11))) 
 
 
 # Socio-economic chart
@@ -189,7 +189,7 @@ socio_economic_chart <- ggsave(filename = "charts/socio_economic_chart.png",
                                + labs(x = "Yes voting rate (%)", y = "Electorate SEIFA percentile")
                                + ggtitle("Chart 2: Relationship between referedum voting and socio-economic status") 
                                + scale_x_continuous(limits = c(1, 100))
-                               + theme(plot.title = element_text(size = 9)))
+                               + theme(plot.title = element_text(size = 10)))
 
 ggplot(socio_economic_chart_data, aes(yes_per_cent, percentile, colour = index)) + geom_jitter() + facet_wrap(~index) + theme(legend.position = "none")
 
@@ -220,6 +220,7 @@ ggsave(filename = "charts/geographic_chart.png", plot = ggplot(geographic_chart_
        + labs(x = "Yes voting rate (%)", y = "")
        + ggtitle("Chart 3: Distribution of yes votes by geography") 
        + scale_x_continuous(limits = c(1, 100))
+       + theme(plot.title = element_text(size = 12))
  )
 
 ggplot(geographic_chart_data_1, aes(yes_per_cent, fill = classification)) + geom_histogram(bins = 20) + facet_wrap(~classification, scales = "fixed") + theme(legend.position = "none")
@@ -233,7 +234,7 @@ ggplot(geographic_chart_data_2, aes(yes_per_cent, fill = classification)) + geom
 ggsave(filename = "charts/endogeneity_test.png", plot =  ggplot(data, aes(election_LNP, electorate_ieo_seifa)) 
        + geom_jitter()
        + labs(x = "LNP first preference rate (%)", y = "IEO SEIFA (percentile)")
-       + ggtitle("Chart 4: Relationship between yes vote model ind. variable")
+       + ggtitle("Chart 4: Relationship between yes vote model independent variables")
        + theme(plot.title = element_text(size = 10)))
 
 cor(data$election_LNP, data$electorate_ieo_seifa)
@@ -251,6 +252,11 @@ yes_vote_metro_model <- lm(yes_per_cent ~ election_LNP + electorate_ieo_seifa + 
 
 summary(yes_vote_metro_model)
 
+
+yes_vote_inner_metro_model <- lm(yes_per_cent ~ election_LNP + electorate_ieo_seifa + inner_metro, data = data)
+
+summary(yes_vote_metro_model)
+
 yes_vote_non_metro_model <- lm(yes_per_cent ~ election_LNP + electorate_ieo_seifa + non_metro, data = data)
 
 summary(yes_vote_non_metro_model)
@@ -263,7 +269,7 @@ yes_vote_irsd_model <- lm(yes_per_cent ~ election_LNP + electorate_irsd_seifa, d
 
 summary(yes_vote_irsd_model)
 
-tab_model(yes_vote_irsad_model, yes_vote_irsd_model, yes_vote_metro_model, yes_vote_non_metro_model,
-          pred.labels = c("Intercept", "LNP first preference rate (%)","IRSAD SEIFA (percentile)", "IRSD SEIFA (percentile)", "IEO SEIFA (percentile)", "Metropolitan electorate", "Regional electorate"),
-          dv.labels = c("Model 2", "Model 3", "Model 4", "Model 5"),
+tab_model(yes_vote_irsad_model, yes_vote_irsd_model, yes_vote_metro_model, yes_vote_inner_metro_model, yes_vote_non_metro_model,
+          pred.labels = c("Intercept", "LNP first preference rate (%)","IRSAD SEIFA (percentile)", "IRSD SEIFA (percentile)", "IEO SEIFA (percentile)", "Metropolitan electorate", "Inner metropolitan electorate", "Regional electorate"),
+          dv.labels = c("Model 2", "Model 3", "Model 4", "Model 5", "Model 6"),
           p.style = "stars")
