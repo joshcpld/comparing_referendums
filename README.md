@@ -1,0 +1,1 @@
+In this project I create a simple statistical model to better understand what factors were most impactful in deciding the Voice Referendum results in October 2023. Please refer here (https://joshcpld.substack.com/p/what-drove-the-outcome-of-the-voice) for an article explaining my findings.
